@@ -1,10 +1,9 @@
 const http = require('http');
-const routes = require('./routes');
+const routes = require('./routes.js');
 
 
 const server = http.createServer((req, res) => {
 
 });
 
-
-export default server;
+server.listen(3000);

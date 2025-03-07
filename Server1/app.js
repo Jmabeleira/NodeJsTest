@@ -11,7 +11,7 @@ const app = express();
 //We can either use the express function or the body-parser function to parse the body of the request.
 app.use(bodyParser.urlencoded({extended: false}));
 //app.use(express.json());
-app.use(productRouter);
+app.use('/admin',productRouter);
 app.use(shopRouter);
 
 

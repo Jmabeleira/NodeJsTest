@@ -1,16 +1,18 @@
 import { Router } from "express";
+import path from 'path';
 
 //import {} from "../controller/productController.js";
 
 
 const productRouter = Router();
+const __dirname = path.resolve();
 
 productRouter.get("/add-product", (req,res) => {
     console.log('Im in add-product');
-    res.send('<form action= "/products" method="POST"> <input type="text" name="title"> <button type="submit">Add Product</button> </form>');
+    res.sendFile(path.join(__dirname,'view','add-product.html'));
 });
 
-productRouter.post("/products", (req,res) => {
+productRouter.post("/add-product", (req,res) => {
     console.log(req.body.title);    
     res.redirect('/');
 });

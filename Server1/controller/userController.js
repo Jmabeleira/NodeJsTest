@@ -22,10 +22,18 @@ const UserList = [
         email: "abc@gmail.com"
     }];
 
-export const getUsers = async (res) => {
+export const getUsers = async (req,res) => {
     try {
+        console.log("Hello from Getusers");
         res.status(200).json(UserList);
     }catch (error) {
         res.status(404).json({ message: error.message });
     }   
+};
+
+
+export const createUser = async(req , res ) =>{
+    var newUser = req.body;
+    console.log(newUser.name);
+    res.redirect('/');
 };

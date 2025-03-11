@@ -8,7 +8,7 @@ const __dirname = path.resolve();
 shopRouter.get("/products");
 shopRouter.get("/cart");
 shopRouter.get("/", (req,res) => {
-    res.sendFile(path.join(__dirname,'view','shop.html'));
+    res.sendFile(path.join(__dirname,'..','view','shop.html'));
 });
 
 

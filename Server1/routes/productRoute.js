@@ -1,17 +1,19 @@
 import { Router } from "express";
 import path from 'path';
+import rootDir from '../utils/path.js';
+
 
 
 //import {} from "../controller/productController.js";
 
 
+const product = [];
+
 const productRouter = Router();
-const __dirname = path.resolve();
-const rootDir = require('../utils/path.js');
 
 productRouter.get("/add-product", (req,res) => {
     console.log('Im in add-product');
-    res.sendFile(path.join(__dirname,'view','add-product.html'));
+    res.sendFile(path.join(rootDir,'View','add-product.html'));
 });
 
 productRouter.post("/add-product", (req,res) => {
